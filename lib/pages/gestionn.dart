@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
+import '../components/Navbar.dart';
+
 class Gestionn extends StatefulWidget {
   @override
   _GestionnState createState() => _GestionnState();
@@ -13,9 +15,12 @@ class Gestionn extends StatefulWidget {
 class _GestionnState extends State<Gestionn> {
   final double size = 30;
   static const double maxSize = 300;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: Navbar(),
+      appBar: AppBar(title: Text('side'),),
       body: Container(
         color: Colors.grey[300],
         padding: EdgeInsets.all(10),
@@ -61,7 +66,6 @@ class _GestionnState extends State<Gestionn> {
                   ],
                 )),
             Container(
-              
               decoration: BoxDecoration(
                 //image: DecorationImage(image: AssetImage('assets/eauu.jpg'),fit: BoxFit.cover),
                 borderRadius: BorderRadius.circular(20),
@@ -71,13 +75,13 @@ class _GestionnState extends State<Gestionn> {
               child: Text(
                 'INFORMATIONS',
                 style: TextStyle(
-                    fontSize: 30 ,
+                    fontSize: 30,
                     fontWeight: FontWeight.bold,
                     color: Colors.white),
               ),
-              
+
               width: 20,
-              
+
               padding: EdgeInsets.all(40),
               //margin: EdgeInsets.symmetric(vertical: 8.0),
               alignment: Alignment.topCenter,
@@ -97,7 +101,6 @@ class _GestionnState extends State<Gestionn> {
                       'assets/flatten.jpg',
                     ),
                     backgroundColor: Colors.lightBlue),
-
                 enabled: false,
                 onTap: () {},
                 shape: RoundedRectangleBorder(
@@ -208,7 +211,7 @@ class _GestionnState extends State<Gestionn> {
                   ),
                 ),
               ),
-            )
+            ),
           ],
         ),
       ),
@@ -217,11 +220,10 @@ class _GestionnState extends State<Gestionn> {
 
   _top() {
     return Container(
-       
-              
       padding: EdgeInsets.all(20.0),
       decoration: BoxDecoration(
-        image: DecorationImage(image: AssetImage('assets/eau.jpg'),fit: BoxFit.cover),
+          image: DecorationImage(
+              image: AssetImage('assets/eau.jpg'), fit: BoxFit.cover),
           color: Colors.lightBlue,
           borderRadius: BorderRadius.only(
               bottomLeft: Radius.circular(30.0),
